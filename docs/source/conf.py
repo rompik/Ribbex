@@ -134,7 +134,7 @@ def linkcode_resolve(domain: str, info: dict):
     fullname = info["fullname"]
 
     filename = modname.replace(".", "/")
-    baseurl = f"https://github.com/haiiliin/pyqtribbon/blob/main/{filename}.py"
+    baseurl = f"https://github.com/rompik/open_pyqt_ribbon/blob/main/{filename}.py"
 
     submod = sys.modules.get(modname)
     if submod is None:

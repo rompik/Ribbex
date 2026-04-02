@@ -15,4 +15,4 @@ You can also install the package from source:
 
 .. code-block:: sh
 
-    pip install git+https://github.com/haiiliin/pyqtribbon.git@main
+    pip install git+https://github.com/rompik/open_pyqt_ribbon.git@main

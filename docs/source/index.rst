@@ -8,7 +8,7 @@ Welcome to PyQtRibbon's documentation!
 
 Ribbon Bar for PyQt or PySide applications.
 
-- GitHub Repository: `github.com/haiiliin/pyqtribbon <https://github.com/haiiliin/pyqtribbon>`_.
+- GitHub Repository: `github.com/rompik/open_pyqt_ribbon <https://github.com/rompik/open_pyqt_ribbon>`_.
 - PyPI: `pypi.org/project/pyqtribbon <https://pypi.org/project/pyqtribbon/>`_.
 - Documentation: `pyqribbon.readthedocs.io/en/stable <https://pyqribbon.readthedocs.io/en/stable/>`_.
 - Read the Docs: `readthedocs.org/projects/pyqtribbon <https://readthedocs.org/projects/pyqribbon/>`_.

@@ -28,9 +28,9 @@ classifiers = [
 dependencies = ["PyQt6"]
 
 [project.urls]
-"GitHub" = "https://github.com/rompik/pyqt_ribbon"
-"Repository" = "https://github.com/rompik/pyqt_ribbon"
-"Issues" = "https://github.com/rompik/pyqt_ribbon/issues"
+"GitHub" = "https://github.com/rompik/open_pyqt_ribbon"
+"Repository" = "https://github.com/rompik/open_pyqt_ribbon"
+"Issues" = "https://github.com/rompik/open_pyqt_ribbon/issues"
 "Documentation" = "https://pyqribbon.readthedocs.io/en/stable/"
 
 [dependency-groups]
