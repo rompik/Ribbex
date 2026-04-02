@@ -59,7 +59,7 @@ def test_main(qtbot: QtBot):
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 2")
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 3")
     saveButton.setMenu(menu)
-    saveButton.setPopupMode(QtWidgets.QToolButton.InstantPopup)
+    saveButton.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
 
     saveButton = panel.addLargeButton("Button 9", icon=QIcon("pyqtribbon/icons/close.png"))
     menu = QtWidgets.QMenu()
@@ -67,7 +67,7 @@ def test_main(qtbot: QtBot):
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 2")
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 3")
     saveButton.setMenu(menu)
-    saveButton.setPopupMode(QtWidgets.QToolButton.MenuButtonPopup)
+    saveButton.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.MenuButtonPopup)
 
     saveButton = panel.addLargeButton("Button 10", icon=QIcon("pyqtribbon/icons/close.png"))
     menu = QtWidgets.QMenu()
@@ -75,7 +75,7 @@ def test_main(qtbot: QtBot):
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 2")
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 3")
     saveButton.setMenu(menu)
-    saveButton.setPopupMode(QtWidgets.QToolButton.DelayedPopup)
+    saveButton.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.DelayedPopup)
 
     saveButton = panel.addLargeButton("Button 11", icon=QIcon("pyqtribbon/icons/close.png"))
     menu = saveButton.addRibbonMenu()
@@ -90,7 +90,7 @@ def test_main(qtbot: QtBot):
     menu.addLabel("This is a custom widget")
     formLayout = menu.addFormLayoutWidget()
     formLayout.addRow(QtWidgets.QLabel("Row 1"), QtWidgets.QLineEdit())
-    saveButton.setPopupMode(QtWidgets.QToolButton.InstantPopup)
+    saveButton.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
     panel.addWidget(saveButton, rowSpan=Large)
 
     panel = category1.addPanel("Panel 2")
@@ -134,7 +134,7 @@ def test_main(qtbot: QtBot):
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 2")
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 3")
     saveButton.setMenu(menu)
-    saveButton.setPopupMode(QtWidgets.QToolButton.InstantPopup)
+    saveButton.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
     panel.addWidget(saveButton, rowSpan=Large)
 
     saveButton = panel.addLargeButton("Button 9", icon=QIcon("pyqtribbon/icons/close.png"))
@@ -143,7 +143,7 @@ def test_main(qtbot: QtBot):
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 2")
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 3")
     saveButton.setMenu(menu)
-    saveButton.setPopupMode(QtWidgets.QToolButton.MenuButtonPopup)
+    saveButton.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.MenuButtonPopup)
     panel.addWidget(saveButton, rowSpan=Large)
 
     saveButton = panel.addLargeButton("Button 10", icon=QIcon("pyqtribbon/icons/close.png"))
@@ -152,7 +152,7 @@ def test_main(qtbot: QtBot):
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 2")
     menu.addAction(QIcon("pyqtribbon/icons/close.png"), "Action 3")
     saveButton.setMenu(menu)
-    saveButton.setPopupMode(QtWidgets.QToolButton.DelayedPopup)
+    saveButton.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.DelayedPopup)
     panel.addWidget(saveButton, rowSpan=Large)
 
     panel.addCalendarWidget()

@@ -4,7 +4,6 @@ import functools
 import re
 from typing import Any, Callable, Dict, List, Union, overload
 
-import numpy as np
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 from .constants import (
@@ -36,7 +35,24 @@ class RibbonGridLayoutManager(object):
         :param rows: The number of rows in the grid layout.
         """
         self.rows = rows
-        self.cells = np.ones((rows, 1), dtype=bool)
+        self.cells = [[True] for _ in range(rows)]
+
+    def _column_count(self) -> int:
+        return len(self.cells[0])
+
+    def _region_is_free(self, row: int, col: int, rowSpan: int, colSpan: int) -> bool:
+        return all(self.cells[r][c] for r in range(row, row + rowSpan) for c in range(col, col + colSpan))
+
+    def _set_region(self, row: int, col: int, rowSpan: int, colSpan: int, value: bool) -> None:
+        for r in range(row, row + rowSpan):
+            for c in range(col, col + colSpan):
+                self.cells[r][c] = value
+
+    def _append_columns(self, count: int) -> None:
+        if count <= 0:
+            return
+        for r in range(self.rows):
+            self.cells[r].extend([True] * count)
 
     def request_cells(self, rowSpan: int = 1, colSpan: int = 1, mode: RibbonSpaceFindMode = ColumnWise):
         """Request a number of available cells from the grid.
@@ -48,28 +64,29 @@ class RibbonGridLayoutManager(object):
         """
         if rowSpan > self.rows:
             raise ValueError("RowSpan is too large")
+        cols = self._column_count()
         if mode == ColumnWise:
-            for row in range(self.cells.shape[0] - rowSpan + 1):
-                for col in range(self.cells.shape[1] - colSpan + 1):
-                    if self.cells[row : row + rowSpan, col : col + colSpan].all():
-                        self.cells[row : row + rowSpan, col : col + colSpan] = False
+            for row in range(self.rows - rowSpan + 1):
+                for col in range(cols - colSpan + 1):
+                    if self._region_is_free(row, col, rowSpan, colSpan):
+                        self._set_region(row, col, rowSpan, colSpan, False)
                         return row, col
         else:
-            for col in range(self.cells.shape[1]):
-                if self.cells[0, col:].all():
-                    if self.cells.shape[1] - col < colSpan:
-                        self.cells = np.append(
-                            self.cells, np.ones((self.rows, colSpan - (self.cells.shape[1] - col)), dtype=bool), axis=1
-                        )
-                    self.cells[0, col:] = False
+            for col in range(cols):
+                if all(self.cells[0][c] for c in range(col, cols)):
+                    if cols - col < colSpan:
+                        self._append_columns(colSpan - (cols - col))
+                        cols = self._column_count()
+                    for c in range(col, cols):
+                        self.cells[0][c] = False
                     return 0, col
-        cols = self.cells.shape[1]
+        cols = self._column_count()
         colSpan1 = colSpan
-        if self.cells[:, -1].all():
+        if all(self.cells[r][-1] for r in range(self.rows)):
             cols -= 1
             colSpan1 -= 1
-        self.cells = np.append(self.cells, np.ones((self.rows, colSpan1), dtype=bool), axis=1)
-        self.cells[:rowSpan, cols : cols + colSpan] = False
+        self._append_columns(colSpan1)
+        self._set_region(0, cols, rowSpan, colSpan, False)
         return 0, cols
 
 

@@ -25,7 +25,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Development Status :: 4 - Beta",
 ]
-dependencies = ["numpy", "PyQt6"]
+dependencies = ["PyQt6"]
 
 [project.urls]
 "GitHub" = "https://github.com/haiiliin/pyqtribbon"

@@ -38,8 +38,8 @@ def test_ribbonbar(qtbot: QtBot):
     assert gallery.popupMenu().actions()[2].isSeparator()
     assert gallery.popupMenu().actions()[3].defaultWidget().text() == "This is a custom widget"
     assert isinstance(formLayout, QtWidgets.QFormLayout)
-    assert formLayout.itemAt(0, QtWidgets.QFormLayout.LabelRole).widget().text() == "Row 1"
-    assert formLayout.itemAt(0, QtWidgets.QFormLayout.FieldRole).widget().text() == "Line Edit"
+    assert formLayout.itemAt(0, QtWidgets.QFormLayout.ItemRole.LabelRole).widget().text() == "Row 1"
+    assert formLayout.itemAt(0, QtWidgets.QFormLayout.ItemRole.FieldRole).widget().text() == "Line Edit"
 
     # Show the window
     window.resize(1800, 350)

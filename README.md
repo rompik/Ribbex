@@ -10,7 +10,7 @@
 [![PyPI](https://img.shields.io/pypi/v/pyqtribbon)](https://pypi.org/project/pyqtribbon/)
 [![PyPI download month](https://img.shields.io/pypi/dm/pyqtribbon.svg)](https://pypi.org/project/pyqtribbon/)
 
-Ribbon Bar for PyQt or PySide applications.
+Ribbon Bar for PyQt6 applications.
 
 - GitHub Repository: [github.com/haiiliin/pyqtribbon](https://github.com/haiiliin/pyqtribbon/).
 - Documentation: [pyqribbon.readthedocs.io/en/stable](https://pyqribbon.readthedocs.io/en/stable/).
@@ -30,30 +30,24 @@ You can also install the package from source:
 pip install git+https://github.com/haiiliin/pyqtribbon.git@main
 ```
 
-## Compatible Python and PyQt/PySide Versions
+## Python and PyQt6 Requirements
 
-| [Python][py] | [PyQt5][PyQt5]      | [PyQt6][PyQt6]     | [PySide2][PySide2] | [PySide6][PySide6] |
-|:------------:|:-------------------:|:------------------:|:------------------:|:------------------:|
-|   3.8        | :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|   3.9        | :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|   3.10       | :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|   3.11       | :white_check_mark:  | :white_check_mark: |      :x: [^1]      | :white_check_mark: |
-|   3.12       | :white_check_mark:  | :white_check_mark: |      :x: [^1]      | :white_check_mark: |
-|   3.13       | :white_check_mark:  | :white_check_mark: |      :x: [^1]      | :white_check_mark: |
+| [Python][py] | [PyQt6][PyQt6] |
+|:------------:|:------------------:|
+|   3.10       | :white_check_mark: |
+|   3.11       | :white_check_mark: |
+|   3.12       | :white_check_mark: |
+|   3.13       | :white_check_mark: |
 
 [py]: https://www.python.org/
-[PyQt5]: https://pypi.org/project/PyQt5/
 [PyQt6]: https://pypi.org/project/PyQt6/
-[PySide2]: https://pypi.org/project/PySide2/
-[PySide6]: https://pypi.org/project/PySide6/
-[^1]: PySide2 does not support Python 3.11+ yet.
 
 ## The Ribbon Bar
 
 The ribbon is first introduced by Microsoft in the 2000's. It is a toolbar with a tabbed interface. According to [Microsoft](https://docs.microsoft.com/en-us/cpp/mfc/ribbon-designer-mfc?view=msvc-170):
 
 - A ribbon is a user interface (UI) element that organizes commands into logical groups. These groups appear on separate tabs in a strip across the top of the window. The ribbon replaces the menu bar and toolbars. A ribbon can significantly improve application usability. For more information, see Ribbons. The following illustration shows a ribbon. A ribbon can significantly improve application usability. For more information, see [Ribbons](https://docs.microsoft.com/en-us/windows/win32/uxguide/cmd-ribbons). The following illustration shows a ribbon.
-  
+
   ![ribbon_no_callouts](docs/source/_images/ribbon_no_callouts.png)
 
 ## Definitions of Ribbon Elements

@@ -13,13 +13,13 @@ def test_titlewidget(qtbot: QtBot):
 
     # Test the mouse double click events
     titlewidget.showNormal()
-    qtbot.mouseDClick(titlewidget, QtCore.Qt.LeftButton)
+    qtbot.mouseDClick(titlewidget, QtCore.Qt.MouseButton.LeftButton)
     assert titlewidget.topLevelWidget().isMaximized() is True
-    qtbot.mouseDClick(titlewidget, QtCore.Qt.LeftButton)
+    qtbot.mouseDClick(titlewidget, QtCore.Qt.MouseButton.LeftButton)
     assert titlewidget.topLevelWidget().isMaximized() is False
 
     # Test the mouse move events
     pos = titlewidget.pos()
-    qtbot.mousePress(titlewidget, QtCore.Qt.LeftButton, pos=QtCore.QPoint(0, 0))
+    qtbot.mousePress(titlewidget, QtCore.Qt.MouseButton.LeftButton, pos=QtCore.QPoint(0, 0))
     qtbot.mouseMove(titlewidget, pos=QtCore.QPoint(10, 10))
     # TODO: assert the position of the widget

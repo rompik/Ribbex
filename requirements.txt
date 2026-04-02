@@ -1,7 +1,6 @@
 # Consolidated dependencies from actual imports in codebase (Python 3.10+)
 
 # Runtime
-numpy
 PyQt6
 setuptools-scm
 

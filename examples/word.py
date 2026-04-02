@@ -41,8 +41,8 @@ if __name__ == "__main__":
 
     clipboardPanel = homeCategory.addPanel("Clipboard")
     pasteButton = clipboardPanel.addLargeButton("Paste", icon=QIcon("paste.png"), tooltip="Paste")
-    pasteButton.addAction(QtWidgets.QAction(QIcon("paste-special.png"), "Paste Special"))
-    pasteButton.addAction(QtWidgets.QAction(QIcon("paste-as-text.png"), "Paste as Text"))
+    pasteButton.addAction(QtGui.QAction(QIcon("paste-special.png"), "Paste Special"))
+    pasteButton.addAction(QtGui.QAction(QIcon("paste-as-text.png"), "Paste as Text"))
     clipboardPanel.addSmallButton("Cut", icon=QIcon("cut.png"), showText=False, tooltip="Cut")
     clipboardPanel.addSmallButton("Copy", icon=QIcon("copy.png"), showText=False, tooltip="Copy")
     clipboardPanel.addSmallButton("Painter", icon=QIcon("painter.png"), showText=False, tooltip="Format Painter")
