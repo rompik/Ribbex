@@ -9,6 +9,7 @@ build-backend = "setuptools.build_meta"
 name = "ribbex"
 authors = [
   { name="WANG Hailin", email="hailin.wang@connect.polyu.hk" },
+    { name="Roman PARYGIN", email="roman.parygin@gmail.com" },
 ]
 description = "Ribbon Bar for PyQt6 applications"
 readme = "README.md"

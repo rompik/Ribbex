@@ -1,4 +1,4 @@
-# ribbex
+# Ribbex
 
 [![Documentation Status](https://readthedocs.org/projects/pyqribbon/badge/?version=latest)](https://pyqribbon.readthedocs.io/en/stable/?badge=latest)
 [![Tests](https://github.com/rompik/ribbex/actions/workflows/tests.yml/badge.svg)](https://github.com/rompik/ribbex/actions/workflows/tests.yml)
@@ -19,7 +19,7 @@ Ribbon Bar for PyQt6 applications.
 
 ## Installation
 
-ribbex is distributed to [PyPI](https://pypi.org/project/ribbex/), you can use pip to install it:
+Ribbex is distributed to [PyPI](https://pypi.org/project/ribbex/), you can use pip to install it:
 
 ```shell
 pip install ribbex
@@ -33,9 +33,6 @@ pip install git+https://github.com/rompik/ribbex.git@main
 
 ## Python and PyQt6 Requirements
 
-- [Python][py] 3.10 with [PyQt6][PyQt6]
-- [Python][py] 3.11 with [PyQt6][PyQt6]
-- [Python][py] 3.12 with [PyQt6][PyQt6]
 - [Python][py] 3.13 with [PyQt6][PyQt6]
 
 [py]: https://www.python.org/
